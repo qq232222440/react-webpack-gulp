@@ -1,0 +1,27 @@
+@function torem($px)
+{
+  @return $px/75px*1rem;
+}
+
+@mixin height($value:40){
+  height:torem($value);
+  line-height:torem($value);
+}
+
+@mixin baseheight($value:40){
+  height:$value;
+  line-height:$value;
+}
+@function setLineStyle($lineWidth,$color)
+{
+  @return $lineWidth solid $color;
+}
+
+@mixin setIcon($width,$height,$url)
+{
+  display: block;
+  width:torem($width);
+  height:torem($height);
+  background:url($url) no-repeat center center;
+  background-size:100%;
+}

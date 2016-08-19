@@ -1,4 +1,6 @@
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var path = require("path")
+// var node_modules = path.resolve(__dirname,"node_modules")
 module.exports = {
     entry:[
         "./src/app.js"
@@ -8,12 +10,17 @@ module.exports = {
         filename:"bundle.js"
     },
     resolve:{
-        extensions:["",".js",".jsx",".css"]
+        alias:{
+            "react":"react-lite",
+            "react-dom":"react-lite"
+        },
+        extensions:["",".js",".jsx",".css",".scss"]
+
     },
     module:{
         loaders:[
             {
-                test:/\.js$/,
+                test:/\.js[x]?$/,
                 loader:"babel",
                 exclude:[/node_modules/],
                 query:{
@@ -21,13 +28,19 @@ module.exports = {
                 }
             },
             {
-                test:/\.scss/,
-                loader:ExtractTextPlugin.extract("style-loader","css-loader?sass-loader!cssnext-loader")
+                test:/\.css$/,
+                loader:'style-loader!css-loader'
+            },
+            {
+                test:/\.scss$/,
+                loader: 'style-loader!css-loader!sass-loader?sourceMap'
             },
             {
                 test: /\.(jpg|png|gif)$/,
                 loader: "url-loader?limit=8192"
             }
         ]
-    }
+    },
+    devtool:"source-map",
+    plugins:[]
 }
