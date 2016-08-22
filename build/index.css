@@ -1,0 +1,105 @@
+@charset "UTF-8";
+a, abbr, address, article, aside, audio, b, blockquote, body, caption, cite, code, dd, del, dfn, dialog, div, dl, dt, em, fieldset, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, p, pre, q, samp, section, small, span, strong, sub, sup, tfoot, th, thead, time, tr, ul, var, video {
+  border: 0;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  font-size: 100%;
+  font-weight: normal; }
+
+::-webkit-scrollbar {
+  width: 0 !important; }
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important; }
+
+input {
+  outline: none; }
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  /*-webkit-user-select: none;
+  -webkit-touch-callout: none;*/
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: none;
+  font-weight: bold;
+  /* overflow: hidden;*/
+  position: relative; }
+
+html {
+  -webkit-text-size-adjust: none;
+  background: #ebebeb;
+  height: 100%;
+  font-family: STHeiti,'Microsoft YaHei',Helvetica,Arial,sans-serif; }
+
+body * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+a {
+  text-decoration: none;
+  color: #212121;
+  -webkit-tap-highlight-color: transparent; }
+
+a:hover {
+  opacity: 1; }
+
+i, em {
+  font-style: normal; }
+
+li {
+  list-style: none; }
+
+/**颜色*/
+/**长度*/
+.bg-white {
+  background-color: #fff; }
+
+.bg-black {
+  background-color: rgba(0, 0, 0, 0.5); }
+
+.ft-color {
+  color: #0170fd; }
+
+/**偏移*/
+.pd {
+  padding: 0.26667rem; }
+
+.pb {
+  padding-bottom: 0.26667rem; }
+
+.mt {
+  margin-top: 0.26667rem; }
+
+.mb {
+  margin-bottom: 0.26667rem; }
+
+.mb30 {
+  margin-bottom: 0.4rem; }
+
+.ml30 {
+  margin-left: 0.4rem; }
+
+.mb-title {
+  margin-bottom: 0.56rem; }
+
+.ll {
+  border: 1px solid #ececec; }
+
+.bl {
+  border-bottom: 1px solid #ececec; }
+
+.tl {
+  border-top: 1px solid #ececec; }
+
+/**阴影**/
+.bss {
+  -webkit-box-shadow: 0 0 0 #fff, 0 0 0 #fff, 0 0 0 #fff, 0 7px 8px rgba(159, 160, 160, 0.1);
+  -moz-box-shadow: 0 0 0 #fff, 0 0 0 #fff, 0 0 0 #fff, 0 7px 8px rgba(159, 160, 160, 0.1);
+  box-shadow: 0 0 0 #fff, 0 0 0 #fff, 0 0 0 #fff, 0 5px 5px rgba(159, 160, 160, 0.1);
+  /*底边阴影*/ }

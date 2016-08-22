@@ -1,10 +1,12 @@
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var path = require("path")
-// var node_modules = path.resolve(__dirname,"node_modules")
+var webpack = require("webpack")
+// var node_modules = path.join(__dirname,"/node_modules")
 module.exports = {
-    entry:[
-        "./src/app.js"
-    ],
+    entry:{
+        bundle:"./src/app.js",
+        vendor:["react","react-dom","redux"]
+    },
     output:{
         path:__dirname,
         filename:"bundle.js"
@@ -18,6 +20,11 @@ module.exports = {
 
     },
     module:{
+        // noParse: [
+        //     path.join(node_modules, '/react/dist/react.min'),
+        //     path.join(node_modules, '/react-dom/dist/react-dom.min'),
+        //     path.join(node_modules, '/redux/dist/redux.min'),
+        // ],
         loaders:[
             {
                 test:/\.js[x]?$/,
@@ -29,11 +36,11 @@ module.exports = {
             },
             {
                 test:/\.css$/,
-                loader:'style-loader!css-loader'
+                loader:ExtractTextPlugin.extract('style-loader','css-loader')
             },
             {
                 test:/\.scss$/,
-                loader: 'style-loader!css-loader!sass-loader?sourceMap'
+                loader: ExtractTextPlugin.extract('style-loader','css-loader!sass-loader?sourceMap')
             },
             {
                 test: /\.(jpg|png|gif)$/,
@@ -41,6 +48,23 @@ module.exports = {
             }
         ]
     },
-    devtool:"source-map",
-    plugins:[]
+    devtool:false,
+    'display-error-details': true,
+     // 外部依赖（不会打包到bundle.js里）
+    externals: { 
+         
+    },   
+    plugins:[
+        
+        new ExtractTextPlugin("index.css",{
+            allChunks:true,
+            disable:false
+        }),
+        new webpack.optimize.CommonsChunkPlugin('vendor',  'vendor.js'),
+        // // 比对id的使用频率和分布来得出最短的id分配给使用频率高的模块
+         new webpack.optimize.OccurenceOrderPlugin(),
+        // //去重
+        // new webpack.optimize.DedupePlugin()   
+
+    ]
 }
