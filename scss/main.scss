@@ -1,0 +1,28 @@
+.wrap{
+    width:100%;
+}
+.video-item{
+    width:100%;
+}
+.v-pic{
+    width:100%;
+    height:torem(400px);
+    background-color:#ababab;
+    padding:torem(30px);
+    display:flex;
+    .item-img{
+        width:30%;
+        height:100%;
+        display:inline-block;
+        margin-right:torem(20px)
+    }
+    .item-info{
+        width:65%;
+        display:inline-block;
+        padding:torem(20px);
+        .title{
+            height:torem(40px);
+            line-height:torem(40px);
+        }
+    }
+}

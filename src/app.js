@@ -2,49 +2,41 @@ import React,{Component} from "react";
 import {render} from "react-dom";
 
 import {Router,Route,Link,IndexRoute,browserHistory} from "react-router"
-
-import About from "./routes/about";
+import {createStore, combineReducers, applyMiddleware} from 'redux'
+import {syncHistoryWithStore, routerReducer, routerMiddleware} from 'react-router-redux';
+import {Provider} from 'react-redux'
+import thunk from 'redux-thunk';
+import reducsers from './reducers';
 import Home from "./routes/home";
-import Repos from "./routes/repos";
-// import Socket from "./routes/socket"
-
-import RepoDetails from "./routes/repodetails"
-import ServerError from "./routes/servererror"
+import Header from "./components/header"
 
 
 class App extends Component{
     render(){
         return (
             <div className="wrap">
-                <header>猎鹰导航</header>
-                <menu>
-                    <ul>
-                        <li><Link to="/about">财经</Link></li>
-                        <li><Link to="/repos">社会</Link></li>
-                        <li><Link to="/socket">娱乐</Link></li>
-                        <li><Link to="/socket">科技</Link></li>
-                        <li><Link to="/socket">汽车</Link></li>
-                        <li><Link to="/repos">视频</Link></li>
-                    </ul>
-                </menu>
+                <Header />
                 {this.props.children}
             </div>
         )
     }
 }
-
+const store = createStore(
+    combineReducers(Object.assign({}, reducsers, {routing: routerReducer})),
+    applyMiddleware(thunk,routerMiddleware(browserHistory))
+);
+store.subscribe(() =>
+    console.log("状态改变", store.getState())
+)
+const histroy = syncHistoryWithStore(browserHistory,store);
 render((
-    <Router history={browserHistory} >
-        <Route path="/" component={App}>
-            <IndexRoute component={Home} />
-            <Route path="about" component={About} title="About us"/>
-            <Route path="socket" title="socket connect"/>
-            <Route path="repos" component={Repos}>
-             <Route path="/repo/:repo_name" component={RepoDetails} />
+    <Provider store={store}>
+        <Router history={histroy} >
+            <Route path="*" component={App}>
+                <IndexRoute component={Home} />
             </Route>
-<Route path="error" component={ServerError} />
-        </Route>
-    </Router>
+        </Router>
+    </Provider>
     ),
-    document.getElementById("app")
+    document.body
 )
