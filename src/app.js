@@ -17,6 +17,7 @@ class App extends Component{
             <div className="wrap">
                 <Header />
                 {this.props.children}
+                
             </div>
         )
     }

@@ -10,7 +10,7 @@ export function getInitInfo(title,page,url){
         {
             dispatch({type:FETCH_INFO_LIST_REQUEST,title:title});
             fetch(url+"?page="+page,{"method":"GET","mode":"cors","cache":"default"})
-            .then((response)=>{ 
+            .then((response)=>{
                 if(response.ok){
                     return response.json();
                 }
