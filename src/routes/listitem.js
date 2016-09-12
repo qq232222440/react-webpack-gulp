@@ -8,7 +8,7 @@ class ListItem extends Component{
         console.log(arrs)
         let arr =  arrs.map((dd)=>{ 
             return (<section key={dd} className="video-item">
-                <a href='#'>
+                <a href='#button'>
                     <div className="v-pic">
                          <div className="item-img">
                             <img src="" alt="11"/>

@@ -5,7 +5,7 @@ var webpack = require("webpack")
 module.exports = {
     entry:{
         bundle:"./src/app.js",
-        vendor:["react","react-dom","redux","react-router"]
+        vendor:["react","react-dom","redux","react-router","classnames"]
     },
     output:{
         path:__dirname,
