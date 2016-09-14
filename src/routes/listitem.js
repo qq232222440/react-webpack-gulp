@@ -1,7 +1,8 @@
 import React,{Component} from "react"
 import Count from "../components/count"
+import NumberInput from "../components/button/NumberInput"
 
-class ListItem extends Component{
+export default class ListItem extends Component{
 
     render(){
         let arrs = this.props.data;
@@ -17,11 +18,7 @@ class ListItem extends Component{
                             <p className="title">1231312</p>
                             <p className="desc">aaaaaa</p>
                          </div>
-                         <div className="">
-                            <span className="dec">-</span>
-                            <span className="count">0</span>
-                            <span className="add">+</span>
-                         </div>
+                        <NumberInput min={1} max={99} value={1}/> 
                     </div>
                     <div className="v-mask">
                         {dd}
@@ -32,5 +29,3 @@ class ListItem extends Component{
         return (<div  className="video-content">{arr}</div>);
     }
 }
-
-export default ListItem

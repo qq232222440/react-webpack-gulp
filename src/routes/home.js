@@ -5,10 +5,10 @@ import ListItem from "./listitem"
 import {merge} from "lodash"
 require("../../scss/index")
 class Home extends Component{
-    
+
     componentDidMount(){
      //    window.addEventListener('scroll', this.handleScroll);
-        let {dispatch} = this.props    
+        let {dispatch} = this.props
         let {isFetching,page,dt} = this.props.listInfo
         const urls = window.location.l
         if (isFetching === false && dt.length === 0) {
@@ -22,10 +22,10 @@ class Home extends Component{
     }
     render(){
         let self = this
-        return ( 
-                <div className="content" onScroll={(e)=>self.onScroll(e)}> 
-                       <ListItem data = {this.props.listInfo.dt} />
-                </div>
+        return (
+            <div className="content" onScroll={(e)=>self.onScroll(e)}>
+                    <ListItem data = {this.props.listInfo.dt} />
+            </div>
         )
     }
 
@@ -36,7 +36,7 @@ class Home extends Component{
         if(target.scrollTop+target.clientHeight>target.scrollHeight-44)
         {
             i++;
-            
+
         }
     }
 }

@@ -57,7 +57,7 @@ class Header extends Component {
             <div id="header">
                 <div className="h-info"></div>    
                 <ul>
-                    <li onClick={()=>this.alertClickHandler(1)}>start11</li>
+                    <li onClick={()=>this.alertClickHandler(1)}>alert</li>
                     <li onClick={()=>this.toastClickHandle(2)}>toast</li>  
                     <li onClick={()=>this.onMenuClick("2")}>start</li>  
                     <li onClick={()=>this.onMenuClick("3")}>start</li>

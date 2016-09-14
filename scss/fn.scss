@@ -1,6 +1,8 @@
+$designWidth:750px;
 @function torem($px)
 {
-  @return $px/75px*1rem;
+  
+  @return($px*320/$designWidth/20)*1rem; 
 }
 
 @mixin height($value:40){

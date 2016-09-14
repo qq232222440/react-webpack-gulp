@@ -14,7 +14,6 @@ import Button from "./routes/button/index"
 class App extends Component{
     render(){
         return (
-           
             <div className="wrap">
                 <Header />
                 <ReactCSSTransitionGroup
@@ -28,9 +27,7 @@ class App extends Component{
                         key: this.props.location.pathname
                     })} 
                 </ReactCSSTransitionGroup>
-            </div>
-           
-            
+            </div>         
         )
     }
 }

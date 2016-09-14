@@ -1,6 +1,6 @@
 import React,{Component} from "react"
 
-class Count extends Component
+export default class Count extends Component
 {
     render(){
         return (
@@ -8,4 +8,4 @@ class Count extends Component
         )
     }
 }
-export default Count
+ 
