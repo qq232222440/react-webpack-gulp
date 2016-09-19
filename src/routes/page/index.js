@@ -11,7 +11,7 @@ export default class extends Component{
                         <a href="#"><h1 className="title">{title}</h1></a>
                         <p className="sub_title">{subTitle}</p>
                     </div>
-                    <div className={`bd ${spacing}?spacing:''`}>
+                    <div className={`bd ${spacing?'spacing':''}`}>
                         {children}
                     </div>
                 </div>

@@ -58,7 +58,7 @@ export default class NumberInput extends Component{
             })
             return 
         }
-        let newValue = value -step
+        let newValue = value - step
         let newCanReduce = true
         if(newValue <= min)
         {
@@ -158,6 +158,8 @@ export default class NumberInput extends Component{
     
     render(){
         const {value,canReduce,canPlus,digital} = this.state
+
+        console.log(canPlus,canReduce)
         return (
             <div className="numberinput">
                 <span onClick = {::this.handleReduce} className={`numberinput-control numberinput-control-left ${canReduce ? '' : 'numberinput-control-disable'}`}>-</span>

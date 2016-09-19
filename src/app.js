@@ -1,3 +1,7 @@
+/****
+ * 路由
+ */
+
 import React,{Component} from "react";
 import {render} from "react-dom";
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'

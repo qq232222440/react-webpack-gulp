@@ -9,7 +9,7 @@ export default class ListItem extends Component{
         console.log(arrs)
         let arr =  arrs.map((dd)=>{ 
             return (<section key={dd} className="video-item">
-                <a href='#button'>
+         
                     <div className="v-pic">
                          <div className="item-img">
                             <img src="" alt="11"/>
@@ -18,14 +18,19 @@ export default class ListItem extends Component{
                             <p className="title">1231312</p>
                             <p className="desc">aaaaaa</p>
                          </div>
-                        <NumberInput min={1} max={99} value={1}/> 
+                         <div className="upgrade">
+                            <span className="">增加</span>
+                            <span className="">减少</span>
+                         </div>
+                         
                     </div>
                     <div className="v-mask">
                         {dd}
                     </div>
-                </a>
+            
             </section>)
         })
         return (<div  className="video-content">{arr}</div>);
     }
 }
+// <NumberInput min={1} max={99} value={1}/> 

@@ -1,0 +1,38 @@
+.slider{
+    margin:20px 0;
+    position: relative;
+    background:#e6e6e6;
+    .slider-fill,.slider-handle{
+        position:absolute; 
+    }
+    &,.slider-fill{
+        display: block;
+        box-shadow: inset 0px 1px 3px rgba(0,0,0,0.3);
+    }
+    .slider-handle{
+        background-color:#fff;
+        border:1px solid #ccc;
+        cursor:pointer;
+        display: inline-block;
+        position:absolute;
+        &:active{
+            background-color:#999;
+        }
+    }
+}
+.slider-horizontal{
+    height:20px;
+    border:1px solid rebeccapurple;
+    .slider-fill{
+        height:100%;
+        background-color:red;
+        border-radius:10px;
+        top:0;
+    }
+    .slider-handle{
+        width:40px;
+        height:40px;
+        border-radius:40px;
+        top:-10px;
+    }
+}
